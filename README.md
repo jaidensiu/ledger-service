@@ -1,4 +1,4 @@
-# Banking Service
+# Ledger Service
 
 ![Gopher in a factory](images/go_factory.png)
 
