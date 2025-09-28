@@ -4,13 +4,14 @@
 
 ## Project details
 
-A backend web service for secure account management, balance tracking, and money transfers. This project is currently in construction.
+A secure, scalable, and cloud-native backend service for managing accounts, balances, and transactions.
 
 ## Tech stack
 
 - Go
 - Gin
 - gRPC
+- Protocol Buffers
 - PostgreSQL
 - Redis
 - Docker
