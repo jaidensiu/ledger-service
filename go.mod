@@ -1,4 +1,4 @@
-module github.com/jaidensiu/banking-service
+module github.com/jaidensiu/ledger-service
 
 go 1.22.2
 

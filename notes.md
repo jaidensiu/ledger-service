@@ -9,7 +9,7 @@
 
 ## Database schema
 
-The database schema can be found [here](https://dbdiagram.io/d/banking-service-661a381503593b6b61e4d3dc).
+The database schema can be found [here](https://dbdiagram.io/d/ledger-service-661a381503593b6b61e4d3dc).
 
 ## Docker commands
 

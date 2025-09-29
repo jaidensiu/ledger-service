@@ -13,10 +13,10 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang/mock/gomock"
-	mockdb "github.com/jaidensiu/banking-service/db/mock"
-	db "github.com/jaidensiu/banking-service/db/sqlc"
-	"github.com/jaidensiu/banking-service/token"
-	"github.com/jaidensiu/banking-service/util"
+	mockdb "github.com/jaidensiu/ledger-service/db/mock"
+	db "github.com/jaidensiu/ledger-service/db/sqlc"
+	"github.com/jaidensiu/ledger-service/token"
+	"github.com/jaidensiu/ledger-service/util"
 	"github.com/stretchr/testify/require"
 )
 

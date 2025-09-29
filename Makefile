@@ -44,7 +44,7 @@ server:
 
 # Generate mock implementations for the database
 mock:
-	mockgen -package mockdb -destination db/mock/store.go github.com/jaidensiu/banking-service/db/sqlc Store
+	mockgen -package mockdb -destination db/mock/store.go github.com/jaidensiu/ledger-service/db/sqlc Store
 
 # Phony target declarations
 .PHONY: postgres createdb dropdb accessdb migrateup migrateup1 migratedown migratedown1 sqlc server mock
