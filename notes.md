@@ -1,17 +1,53 @@
-## Banking service features
+## Database Schema
 
-- Create and manage accounts
-    - Owner, balance, currency
-- Record all balance changes
-    - Create an account entry for each change
-- Money transfer transaction
-    - Perform money transfer between 2 accounts consistently within a transaction
+```mermaid
+erDiagram
+    users ||--o{ accounts : "owns"
+    accounts ||--o{ entries : "has"
+    accounts ||--o{ transfers : "from"
+    accounts ||--o{ transfers : "to"
 
-## Database schema
+    users {
+        varchar username PK
+        varchar hashed_password "NOT NULL"
+        varchar full_name "NOT NULL"
+        varchar email "UNIQUE, NOT NULL"
+        timestampz password_changed_at "NOT NULL, DEFAULT 0001-01-01"
+        timestamptz created_at "NOT NULL, DEFAULT now()"
+    }
 
-The database schema can be found [here](https://dbdiagram.io/d/ledger-service-661a381503593b6b61e4d3dc).
+    accounts {
+        bigserial id PK
+        varchar owner FK "NOT NULL"
+        bigint balance "NOT NULL"
+        varchar currency "NOT NULL"
+        timestamptz created_at "NOT NULL, DEFAULT now()"
+    }
 
-## Docker commands
+    entries {
+        bigserial id PK
+        bigint account_id FK "NOT NULL"
+        bigint amount "NOT NULL, can be negative or positive"
+        timestamptz created_at "NOT NULL, DEFAULT now()"
+    }
+
+    transfers {
+        bigserial id PK
+        bigint from_account_id FK "NOT NULL"
+        bigint to_account_id FK "NOT NULL"
+        bigint amount "NOT NULL, must be positive"
+        timestamptz created_at "NOT NULL, DEFAULT now()"
+    }
+```
+
+**Summary of Entity Relationships**
+
+- One user can own many accounts
+- One account can have many entries
+- One account can be the source of many transfers
+- One account can be the destination of many transfers
+
+## Docker Commands
 
 List running containers:
 ```bash
@@ -73,7 +109,7 @@ View container logs:
 docker logs <container_name_or_id>
 ```
 
-## Tools and references
+## Tools and References
 
 - [DBDiagram](https://dbdiagram.io/)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
