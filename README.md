@@ -104,11 +104,11 @@ This project is built as part of a comprehensive backend engineering learning jo
 - **TablePlus**: Database management
 - **k9s**: Kubernetes cluster management
 - **Make**: Build automation
+- **Postman**: API development and testing
 
-### Documentation & API
+### Documentation
 - **Swagger/OpenAPI**: API documentation
-- **dbdiagram.io**: Database schema design
-    - TODO: maybe use Mermaid directly in Markdown?
+- **Mermaid**: Diagramming and charting
 
 ### Authentication and Security
 - **JWT**: JSON Web Tokens
